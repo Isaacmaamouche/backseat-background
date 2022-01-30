@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #fff989;
+  font-family: fantasy;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2vw;
+  font-size: 4rem;
+  padding: 3vw 6vw;
+  width: 60vw;
+}
+.hero img {
+  display: none;
+  width: 100%;
+}
+.hero img.display {
+  display: block;
+}
+
+.backdrop {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  z-index: 90;
+}
+
+.bg-animated {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5vw, 1fr));
+  width: 100%;
+  height: 100vh;
+}
+.bg-animated div {
+  height: 100vh;
+  transform: translateY(-100%);
+  animation: slideDown 8s infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+.bg-animated div:nth-child(0) {
+  animation-delay: 0ms;
+}
+.bg-animated div:nth-child(1) {
+  animation-delay: 500ms;
+}
+.bg-animated div:nth-child(2) {
+  animation-delay: 1000ms;
+}
+.bg-animated div:nth-child(3) {
+  animation-delay: 1500ms;
+}
+.bg-animated div:nth-child(4) {
+  animation-delay: 2000ms;
+}
+.bg-animated div:nth-child(5) {
+  animation-delay: 2500ms;
+}
+.bg-animated div:nth-child(6) {
+  animation-delay: 3000ms;
+}
+.bg-animated div:nth-child(7) {
+  animation-delay: 3500ms;
+}
+.bg-animated div:nth-child(8) {
+  animation-delay: 4000ms;
+}
+.bg-animated div:nth-child(9) {
+  animation-delay: 4500ms;
+}
+.bg-animated div:nth-child(10) {
+  animation-delay: 5000ms;
+}
+.bg-animated div:nth-child(11) {
+  animation-delay: 5500ms;
+}
+.bg-animated div:nth-child(12) {
+  animation-delay: 6000ms;
+}
+.bg-animated div:nth-child(13) {
+  animation-delay: 6500ms;
+}
+.bg-animated div:nth-child(14) {
+  animation-delay: 7000ms;
+}
+.bg-animated div:nth-child(15) {
+  animation-delay: 7500ms;
+}
+.bg-animated div:nth-child(16) {
+  animation-delay: 8000ms;
+}
+.bg-animated div:nth-child(17) {
+  animation-delay: 8500ms;
+}
+.bg-animated div:nth-child(18) {
+  animation-delay: 9000ms;
+}
+.bg-animated div:nth-child(19) {
+  animation-delay: 9500ms;
+}
+.bg-animated div:nth-child(20) {
+  animation-delay: 10000ms;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(-25%);
+  }
+}
+.hero_selector {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.hero_selector ul {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  transform: translateX(-100%);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-bottom-right-radius: 2vh;
+}
+.hero_selector:hover ul {
+  transform: translateX(0%);
+}
+
+.backseat-border,
+.sujet_semaine-border,
+.invite_semaine-border,
+.quiz-border,
+.invitee_politique-border,
+.invite_politique-border {
+  border: 0.1vw solid #fff989;
+}
+
+.carte_blanche-border {
+  border: 0.1vw solid white;
+}
+
+.backseat-bg div {
+  background: linear-gradient(0deg, #1a2551 0%, #007cfe 15%, #007cfe 95%, #1a2551 100%);
+}
+
+.sujet_semaine-bg div {
+  background: linear-gradient(0deg, #0421eb 0%, #007cfe 15%, #007cfe 95%, #0421eb 100%);
+}
+
+.invite_semaine-bg div {
+  background: linear-gradient(0deg, #ff2418 0%, #fb6e2b 15%, #fb6e2b 95%, #ff2418 100%);
+}
+
+.quiz-bg div {
+  background: linear-gradient(0deg, #d3194a 0%, #c63aac 15%, #c63aac 95%, #d3194a 100%);
+}
+
+.invitee_politique-bg div,
+.invite_politique-bg div {
+  background: linear-gradient(0deg, #007cfe 0%, #29f0f5 15%, #29f0f5 95%, #007cfe 100%);
+}
+
+.carte_blanche-bg div {
+  background: linear-gradient(0deg, #1a2551 0%, #76a0c3 15%, #76a0c3 95%, #1a2551 100%);
+}
+
+.backseat {
+  background: #1a2551;
+}
+
+.sujet_semaine {
+  background-color: #0421eb;
+}
+
+.invite_semaine {
+  background-color: #ff2418;
+}
+
+.quiz {
+  background-color: #d3194a;
+}
+
+.invitee_politique,
+.invite_politique {
+  background-color: #007cfe;
+}
+
+.carte_blanche {
+  background-color: #1a2551;
+}
+
+/*# sourceMappingURL=style.css.map */

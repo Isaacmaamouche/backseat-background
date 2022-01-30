@@ -1,0 +1,210 @@
+$yellow: #fff989;
+
+$darkerblue: #1a2551;
+$greyblue: #76a0c3;
+
+$red: #ff2418;
+$orange: #fb6e2b;
+
+$sanguine: #d3194a;
+$purple: #c63aac;
+
+$darkblue: #0421eb;
+$turquoise: #29f0f5;
+
+$lightblue: #0d87fa;
+$blue: #007cfe;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $yellow;
+  font-family: fantasy;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2vw;
+  font-size: 4rem;
+  padding: 3vw 6vw;
+  width: 60vw;
+
+  img {
+    display: none;
+    width: 100%;
+    &.display {
+      display: block;
+    }
+  }
+}
+
+.backdrop {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  z-index: 90;
+}
+
+.bg-animated {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5vw, 1fr));
+  width: 100%;
+  height: 100vh;
+  div {
+    height: 100vh;
+    transform: translateY(-100%);
+    animation: slideDown 8s infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    @for $i from 0 through 20 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * 500ms;
+      }
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(-25%);
+  }
+}
+
+.hero_selector {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  font-size: 2rem;
+  text-transform: uppercase;
+  ul {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    transform: translateX(-100%);
+    background-color: rgb(255 255 255 / 10%);
+    backdrop-filter: blur(15px);
+    border-bottom-right-radius: 2vh;
+  }
+  &:hover ul {
+    transform: translateX(0%);
+  }
+}
+
+.backseat-border,
+.sujet_semaine-border,
+.invite_semaine-border,
+.quiz-border,
+.invitee_politique-border,
+.invite_politique-border {
+  border: 0.1vw solid $yellow;
+}
+.carte_blanche-border {
+  border: 0.1vw solid white;
+}
+
+.backseat-bg div {
+  background: linear-gradient(
+    0deg,
+    $darkerblue 0%,
+    $blue 15%,
+    $blue 95%,
+    $darkerblue 100%
+  );
+}
+
+.sujet_semaine-bg div {
+  background: linear-gradient(
+    0deg,
+    $darkblue 0%,
+    $blue 15%,
+    $blue 95%,
+    $darkblue 100%
+  );
+}
+
+.invite_semaine-bg div {
+  background: linear-gradient(
+    0deg,
+    $red 0%,
+    $orange 15%,
+    $orange 95%,
+    $red 100%
+  );
+}
+
+.quiz-bg div {
+  background: linear-gradient(
+    0deg,
+    $sanguine 0%,
+    $purple 15%,
+    $purple 95%,
+    $sanguine 100%
+  );
+}
+
+.invitee_politique-bg div,
+.invite_politique-bg div {
+  background: linear-gradient(
+    0deg,
+    $blue 0%,
+    $turquoise 15%,
+    $turquoise 95%,
+    $blue 100%
+  );
+}
+
+.carte_blanche-bg div {
+  background: linear-gradient(
+    0deg,
+    $darkerblue 0%,
+    $greyblue 15%,
+    $greyblue 95%,
+    $darkerblue 100%
+  );
+}
+
+///////@at-root
+
+.backseat {
+  background: $darkerblue;
+}
+
+.sujet_semaine {
+  background-color: $darkblue;
+}
+
+.invite_semaine {
+  background-color: $red;
+}
+
+.quiz {
+  background-color: $sanguine;
+}
+
+.invitee_politique,
+.invite_politique {
+  background-color: $blue;
+}
+
+.carte_blanche {
+  background-color: $darkerblue;
+}
